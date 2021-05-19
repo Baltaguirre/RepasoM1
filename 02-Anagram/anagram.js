@@ -12,4 +12,16 @@
  * @returns {boolean} - deberia retornar true o false.
  */
 
-function validAnagram(first, second) {}
+ function validAnagram(first, second) {
+    var primero = first.split('');
+    var segundo = second.split('');
+    
+    for (var i = 0; i < segundo.length; i++) {
+        let values = primero.indexOf(segundo[i])
+        if (values === -1) {
+            return false;
+        } 
+        primero.splice(values,1)
+        }
+    return true;
+    }

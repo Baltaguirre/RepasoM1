@@ -7,4 +7,13 @@
  * @returns {String} - deberia retornar un string.
  */
 
-function isPalindrome(str) {}
+function isPalindrome(str) {
+    var reves = str.split('').reverse().join('');
+    if (str !== reves) {
+        return false;
+    } 
+        return true;
+    
+}
+
+console.log(isPalindrome('neuquen'))
