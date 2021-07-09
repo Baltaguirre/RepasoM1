@@ -8,7 +8,7 @@
  * Digamos que tenemos el binario "101" la formulara seria asi:
  * 1 * 2 ^ 2  +  0 * 2 ^ 1  +  1 * 2 ^ 0
 
- *ls
+ 
  */
 
  function BinaryToDecimal(binary, base) {

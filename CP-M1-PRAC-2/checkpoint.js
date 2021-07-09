@@ -24,7 +24,13 @@ const { Queue, LinkedList, Node, BinarySearchTree } = require("./DS.js");
 // < 9
 // > sqrt(4); --> 4 * 4
 // < 16
-function exponencial(exp) {}
+function exponencial(exp) {
+
+  return function (n) {
+    return n ** exp
+  }
+
+}
 
 // ----- Recursión -----
 
@@ -58,7 +64,16 @@ function exponencial(exp) {}
 // El retorno de la funcion 'direcciones' debe ser 'SEN', ya que el destino se encuentra
 // haciendo los movimientos SUR->ESTE->NORTE
 // Aclaraciones: el segundo parametro que recibe la funcion ('direccion') puede ser pasado vacio (null)
-function direcciones(laberinto, direccion = "") {}
+function direcciones(laberinto, direccion = "") {
+  for(var key in laberinto){
+      if ( laberinto[key] === 'destino'){return key} 
+      if(laberinto[key] !== 'pared'){
+        return direccion + key + direcciones(laberinto[key])
+        } 
+  }
+  }
+     
+
 
 // EJERCICIO 3
 // Crea la funcion 'deepEqualArrays':
@@ -73,7 +88,10 @@ function direcciones(laberinto, direccion = "") {}
 // deepEqualArrays([0,1,2], [0,1,2,3]) => false
 // deepEqualArrays([0,1,[[0,1,2],1,2]], [0,1,[[0,1,2],1,2]]) => true
 
-function deepEqualArrays(arr1, arr2) {}
+function deepEqualArrays(arr1, arr2) { 
+
+  
+}
 
 // ----- LinkedList -----
 
@@ -119,7 +137,7 @@ OrderedLinkedList.prototype.print = function () {
 // > LL.print()
 // < 'head --> 5 --> 4 --> 1 --> null'
 
-OrderedLinkedList.prototype.add = function (val) {};
+OrderedLinkedList.prototype.add = function (val) { };
 
 // EJERCICIO 5
 // Crea el metodo 'removeHigher' que deve devolver el valor mas alto de la linked list
@@ -136,7 +154,7 @@ OrderedLinkedList.prototype.add = function (val) {};
 // > LL.removeHigher()
 // < null
 
-OrderedLinkedList.prototype.removeHigher = function () {};
+OrderedLinkedList.prototype.removeHigher = function () { };
 
 // EJERCICIO 6
 // Crea el metodo 'removeLower' que deve devolver el valor mas bajo de la linked list
@@ -153,7 +171,7 @@ OrderedLinkedList.prototype.removeHigher = function () {};
 // > LL.removeHigher()
 // < null
 
-OrderedLinkedList.prototype.removeLower = function () {};
+OrderedLinkedList.prototype.removeLower = function () { };
 
 // ----- QUEUE -----
 
@@ -201,7 +219,7 @@ function multiCallbacks(cbs1, cbs2) {
 // 5   9
 // resultado:[5,8,9,32,64]
 
-BinarySearchTree.prototype.toArray = function () {};
+BinarySearchTree.prototype.toArray = function () { };
 
 // ----- Algoritmos -----
 
@@ -216,14 +234,14 @@ BinarySearchTree.prototype.toArray = function () {};
 // Si bien esta no es la mejor implementacion existente, con que uds puedan
 // informarse sobre algoritmos, leerlos de un pseudocodigo e implemnterlos alcanzara
 
-function primalityTest(num) {}
+function primalityTest(num) { }
 
 // EJERCICIO 10
 // Implementa el algoritmo conocido como 'quickSort', que dado un arreglo de elemntos
 // retorn el mismo ordenado de 'mayor a menor!'
 // https://en.wikipedia.org/wiki/Quicksort
 
-function quickSort(array) {}
+function quickSort(array) { }
 
 // ----- EXTRA CREDIT -----
 
@@ -237,7 +255,7 @@ function quickSort(array) {}
 // > reverse(95823);
 // < 32859
 
-function reverse(num, lastNum = 0) {}
+function reverse(num, lastNum = 0) { }
 
 module.exports = {
   exponencial,
